@@ -12,15 +12,18 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 import {
-  PresentationChartBarIcon,
   ShoppingBagIcon,
   UserCircleIcon,
   Cog6ToothIcon,
   InboxIcon,
   PowerIcon,
+  HomeIcon,
+  FunnelIcon
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
- 
+
+
+
 function SideNav() {
   const [open, setOpen] = React.useState(0);
  
@@ -29,13 +32,17 @@ function SideNav() {
   };
  
   return (
-    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
-      <div className="mb-2 p-4">
-        <Typography variant="h5" color="blue-gray">
-          Sidebar
-        </Typography>
-      </div>
+    <Card className="h-[calc(100vh-2rem)] hidden lg:block w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+  
       <List>
+
+        <ListItem>
+          <ListItemPrefix>
+            <HomeIcon className="h-5 w-5" />
+          </ListItemPrefix>
+          Home
+        </ListItem> 
+
         <Accordion
           open={open === 1}
           icon={
@@ -48,10 +55,10 @@ function SideNav() {
           <ListItem className="p-0" selected={open === 1}>
             <AccordionHeader onClick={() => handleOpen(1)} className="border-b-0 p-3">
               <ListItemPrefix>
-                <PresentationChartBarIcon className="h-5 w-5" />
+                <FunnelIcon className="h-5 w-5" />
               </ListItemPrefix>
               <Typography color="blue-gray" className="mr-auto font-normal">
-                Dashboard
+                Categories
               </Typography>
             </AccordionHeader>
           </ListItem>
@@ -61,23 +68,18 @@ function SideNav() {
                 <ListItemPrefix>
                   <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                 </ListItemPrefix>
-                Analytics
+                Anime Search
               </ListItem>
               <ListItem>
                 <ListItemPrefix>
                   <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                 </ListItemPrefix>
-                Reporting
-              </ListItem>
-              <ListItem>
-                <ListItemPrefix>
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                </ListItemPrefix>
-                Projects
+                Manga Search
               </ListItem>
             </List>
           </AccordionBody>
         </Accordion>
+
         <Accordion
           open={open === 2}
           icon={
@@ -128,7 +130,7 @@ function SideNav() {
             <UserCircleIcon className="h-5 w-5" />
           </ListItemPrefix>
           Profile
-        </ListItem>
+        </ListItem>       
         <ListItem>
           <ListItemPrefix>
             <Cog6ToothIcon className="h-5 w-5" />
