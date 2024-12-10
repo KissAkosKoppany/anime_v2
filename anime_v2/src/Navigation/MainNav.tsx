@@ -1,27 +1,15 @@
+import { useState } from 'react';
 import TopNav from './TopNav'
 import SideNav from './SideNav'
 
-export type TopNavType = {
-  navigation: {
-      name: string
-      href: string
-      current: boolean
-  }[]
-}
-
 function MainNav() {
 
-    const navigation = [
-        { name: 'Dashboard', href: '#', current: true },
-        { name: 'Team', href: '#', current: false },
-        { name: 'Projects', href: '#', current: false },
-        { name: 'Calendar', href: '#', current: false },
-      ]
+  const [openNav, setOpenNav] = useState(false)
 
     return (
         <>
-          <TopNav navigation={navigation} />
-          <SideNav />
+          <TopNav setOpenNav={setOpenNav} openNav={openNav} />
+          <SideNav openNav={openNav} setOpenNav={setOpenNav} />
         </>
     )
 }
