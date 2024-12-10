@@ -8,11 +8,10 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
+  Input
 } from "@material-tailwind/react";
 import {
   BookOpenIcon,
-  Cog6ToothIcon,
-  PowerIcon,
   HomeIcon,
   FunnelIcon,
   NumberedListIcon,
@@ -20,7 +19,6 @@ import {
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { NavigationProps } from "./TopNav";
-import { SearchInput } from "./NavVomponents/SearchInput";
 
 
 function SideNav({ openNav }: NavigationProps) {
@@ -32,12 +30,13 @@ function SideNav({ openNav }: NavigationProps) {
   };
  
   return (
-    <Card className={`fixed h-[calc(100vh-2rem)] ${openNav ? "block" : "hidden"} w-full max-w-[20rem] px-4 shadow-xl shadow-blue-gray-900/5`}>
+    // when smaller need to make it position absolute, and add a second div layer next to it to fill page as a modal
+    <Card className={`fixed h-[calc(100vh-2rem)] ${openNav ? "block" : "hidden"} w-full max-w-[15rem] px-4 shadow-xl shadow-blue-gray-900/5`}>
   
       <List>
 
         <ListItem className="md:hidden block">
-          <SearchInput />
+          <Input label="Search..." />
         </ListItem>
 
         <ListItem>
@@ -185,18 +184,6 @@ function SideNav({ openNav }: NavigationProps) {
           </AccordionBody>
         </Accordion>
 
-        <ListItem>
-          <ListItemPrefix>
-            <Cog6ToothIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
       </List>
     </Card>
   );

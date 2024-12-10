@@ -3,10 +3,10 @@ import {
   Navbar,
   Typography,
   IconButton,
+  Input
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import AvatarWithDropdown from "./NavVomponents/AvatarWithDropdown";
-import { SearchInput } from "./NavVomponents/SearchInput";
 
 export type NavigationProps = {
   openNav: boolean
@@ -38,8 +38,8 @@ export default function TopNav({ setOpenNav, openNav }: NavigationProps) {
           OTAKU LAND
         </Typography>
 
-        <div className="mx-auto md:block hidden w-72">
-          <SearchInput />
+        <div className="mx-auto md:block hidden w-72 xl:w-96">
+          <Input label="Search..." />
         </div>
 
         <div className="mr-3 ml-auto md:ml-0">
