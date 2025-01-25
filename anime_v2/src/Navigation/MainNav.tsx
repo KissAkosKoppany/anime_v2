@@ -1,15 +1,14 @@
-import { useState } from 'react';
+import TestNav from './TestNav';
 import TopNav from './TopNav'
-import SideNav from './SideNav'
 
 function MainNav() {
 
-  const [openNav, setOpenNav] = useState(false)
+  // const [openNav, setOpenNav] = useState(true)
 
     return (
         <>
-          <TopNav setOpenNav={setOpenNav} openNav={openNav} />
-          <SideNav openNav={openNav} setOpenNav={setOpenNav} />
+          <TopNav />
+          <TestNav />
         </>
     )
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  IconButton,
   Typography,
   List,
   ListItem,
@@ -8,8 +7,6 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
-  Input,
-  Drawer,
   Card,
 } from "@material-tailwind/react";
 import {
@@ -21,54 +18,23 @@ import {
 import {
   ChevronRightIcon,
   ChevronDownIcon,
-  MagnifyingGlassIcon,
-  Bars3Icon,
-  XMarkIcon,
 } from "@heroicons/react/24/outline";
  
-export default function SideNav() {
+export default function TestNav() {
   const [open, setOpen] = React.useState(0);
-  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
  
   const handleOpen = (value: any) => {
     setOpen(open === value ? 0 : value);
   };
  
-  const openDrawer = () => setIsDrawerOpen(true);
-  const closeDrawer = () => setIsDrawerOpen(false);
  
   return (
     <>
-      <IconButton variant="text" size="lg" onClick={openDrawer}>
-        {isDrawerOpen ? (
-          <XMarkIcon className="text-gray-300 h-8 w-8 stroke-2" />
-        ) : (
-          <Bars3Icon className="text-gray-300 h-8 w-8 stroke-2" />
-        )}
-      </IconButton>
-      <Drawer className="bg-blue-gray-900" open={isDrawerOpen} onClose={closeDrawer}>
         <Card
           color="transparent"
           shadow={false}
-          className="h-[calc(100vh-2rem)] w-full p-4"
+          className="h-[calc(100vh-4.5rem)] w-72 p-4 bg-blue-gray-800 rounded-none"
         >
-          <div className="mb-2 flex items-center gap-4 p-4">
-            <img
-              src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
-              alt="brand"
-              className="h-8 w-8"
-            />
-            <Typography variant="h5" color="white">
-              OTAKULAND
-            </Typography>
-          </div>
-          <div className="p-2">
-            <Input
-              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
-              label="Search"
-              color="white"
-            />
-          </div>
           <List>
             <Accordion
               open={open === 1}
@@ -198,7 +164,7 @@ export default function SideNav() {
                 <List className="text-blue-gray-200 p-0">
                   <ListItem>
                     <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="text-blue-gray-200 h-3 w-5" />
+                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                     </ListItemPrefix>
                     Top Manga
                   </ListItem>
@@ -213,7 +179,6 @@ export default function SideNav() {
             </Accordion>
           </List>
         </Card>
-      </Drawer>
     </>
   );
 }

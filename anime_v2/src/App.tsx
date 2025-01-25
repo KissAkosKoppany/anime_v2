@@ -5,9 +5,9 @@ function App() {
 
   
   return (
-    <>
+    <div className="bg-blue-gray-700">
       <MainNav />
-    </>
+    </div>
   )
 }
 

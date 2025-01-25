@@ -1,64 +1,17 @@
-import { useEffect } from "react";
-import {
-  Navbar,
-  Typography,
-  IconButton,
-  Input
-} from "@material-tailwind/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import AvatarWithDropdown from "./NavVomponents/AvatarWithDropdown";
+import { Input } from "@material-tailwind/react"
+import SideNav from "./SideNav"
 
-export type NavigationProps = {
-  openNav: boolean
-  setOpenNav: (boolean: boolean) => void
-}
- 
-export default function TopNav({ setOpenNav, openNav }: NavigationProps) {
- 
-  const handleWindowResize = () =>
-    window.innerWidth >= 960 && setOpenNav(true);
- 
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
- 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
- 
+export default function TopNav() {
+
   return (
-    <Navbar className="mx-auto max-w-full px-6 py-3 shadow-none">
-      <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5"
-        >
-          OTAKU LAND
-        </Typography>
-
-        <div className="mx-auto md:block hidden w-72 xl:w-96">
-          <Input label="Search..." />
-        </div>
-
-        <div className="mr-3 ml-auto md:ml-0">
-          <AvatarWithDropdown />
-        </div>
-
-        <IconButton
-          variant="text"
-          className=" h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-          ripple={false}
-          onClick={() => setOpenNav(!openNav)}
-        >
-          {openNav ? (
-            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-          ) : (
-            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-          )}
-        </IconButton>
+    <div className="flex justify-between items-center bg-blue-gray-900 py-3 px-5 text-gray-300">
+      <p>OTAKULAND</p>
+      <div className="w-72">
+        <Input color="white" label="Search" />
       </div>
-    </Navbar>
-  );
+      <div>
+        <SideNav />
+      </div>
+    </div>
+  )
 }
