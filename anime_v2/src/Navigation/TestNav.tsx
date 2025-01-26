@@ -33,7 +33,7 @@ export default function TestNav() {
         <Card
           color="transparent"
           shadow={false}
-          className="h-[calc(100vh-4.5rem)] w-72 p-4 bg-blue-gray-800 rounded-none"
+          className="h-[calc(100vh-4.5rem)] w-72 p-4 bg-gray-900 rounded-none"
         >
           <List>
             <Accordion

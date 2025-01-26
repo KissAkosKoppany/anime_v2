@@ -1,4 +1,4 @@
-import TestNav from './TestNav';
+// import TestNav from './TestNav';
 import TopNav from './TopNav'
 
 function MainNav() {
@@ -6,10 +6,10 @@ function MainNav() {
   // const [openNav, setOpenNav] = useState(true)
 
     return (
-        <>
+        <div className='sticky top-0'>
           <TopNav />
-          <TestNav />
-        </>
+          {/* <TestNav /> */}
+        </div>
     )
 }
 
