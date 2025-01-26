@@ -20,7 +20,7 @@ import {
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
  
-export default function TestNav() {
+export default function SideBarNavigation() {
   const [open, setOpen] = React.useState(0);
  
   const handleOpen = (value: any) => {

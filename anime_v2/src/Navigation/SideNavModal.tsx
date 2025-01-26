@@ -7,9 +7,9 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import TestNav from "./TestNav";
+import SideBarNavigation from "./SideBarNavigation";
  
-export default function SideNav() {
+export default function SideNavModal() {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
  
@@ -26,7 +26,7 @@ export default function SideNav() {
         )}
       </IconButton>
       <Drawer className="bg-gray-900" open={isDrawerOpen} onClose={closeDrawer}>
-        <TestNav />
+        <SideBarNavigation />
       </Drawer>
     </>
   );
