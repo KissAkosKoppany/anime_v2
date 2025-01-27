@@ -9,10 +9,10 @@ function App() {
     <div className="bg-gray-900 bg-opacity-90">
       <TopNav />
       <div className="bod flex">
-        <div className="sidnav fixed top-17">
+        <div className="sidnav fixed top-17 hidden xl:block">
           <SideBarNavigation />
         </div>
-        <div className="content ml-72">
+        <div className="content xl:ml-72">
           <div className="h-96">hello</div>
           {/* <div className="h-96">hello</div>
           <div className="h-96">hello</div> */}
