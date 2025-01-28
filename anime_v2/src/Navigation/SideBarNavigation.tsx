@@ -150,7 +150,7 @@ export default function SideBarNavigation() {
               <ListItem className="p-0" selected={open === 3}>
                 <AccordionHeader
                   onClick={() => handleOpen(3)}
-                  className="border-b-0 p-3 hover:bg-blue-gray-600"
+                  className="border-b-0 p-3 hover:bg-blue-gray-600 text-blue-gray-200"
                 >
                   <ListItemPrefix>
                     <BookOpenIcon className="text-blue-gray-200 h-5 w-5" />
