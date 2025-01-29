@@ -14,8 +14,8 @@ function App() {
         </div>
         <div className="content xl:ml-72">
           <div className="h-96">hello</div>
-          {/* <div className="h-96">hello</div>
-          <div className="h-96">hello</div> */}
+          <div className="h-96">hello</div>
+          <div className="h-96">hello</div>
         </div>
       </div>
     </div>
