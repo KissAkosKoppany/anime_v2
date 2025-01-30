@@ -19,6 +19,7 @@ import {
   ChevronRightIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router";
  
 export default function SideBarNavigation() {
   const [open, setOpen] = React.useState(0);
@@ -62,18 +63,22 @@ export default function SideBarNavigation() {
               </ListItem>
               <AccordionBody className="py-1">
                 <List className="p-0 text-blue-gray-200">
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    Anime Search
-                  </ListItem>
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    Manga Search
-                  </ListItem>
+                  <Link to="anime-search">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      Anime Search
+                    </ListItem>
+                  </Link>
+                  <Link to="manga-search">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      Manga Search
+                    </ListItem>
+                  </Link>
                 </List>
               </AccordionBody>
             </Accordion>
@@ -103,39 +108,49 @@ export default function SideBarNavigation() {
               </ListItem>
               <AccordionBody className="py-1">
                 <List className="text-blue-gray-200 p-0">
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    All Anime
-                  </ListItem>
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    Top Airing
-                  </ListItem>
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    Top Upcoming
-                  </ListItem>
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    Top Movies
-                  </ListItem>
+                  <Link to="all-anime">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      All Anime
+                    </ListItem>
+                  </Link>
+                  <Link to="top-airing">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      Top Airing
+                    </ListItem>
+                  </Link>
+                  <Link to="top-upcoming">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      Top Upcoming
+                    </ListItem>
+                  </Link>
+                  <Link to="top-movies">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      Top Movies
+                    </ListItem>
+                  </Link>
                 </List>
               </AccordionBody>
             </Accordion>
-            <ListItem className="text-blue-gray-200 hover:bg-blue-gray-600 hover:text-blue-gray-200">
-              <ListItemPrefix>
-                <CalendarDaysIcon className="text-blue-gray-200 h-5 w-5" />
-              </ListItemPrefix>
-              Seasonal Anime
-            </ListItem>
+            <Link to="seasonal-anime">
+              <ListItem className="text-blue-gray-200 hover:bg-blue-gray-600 hover:text-blue-gray-200">
+                <ListItemPrefix>
+                  <CalendarDaysIcon className="text-blue-gray-200 h-5 w-5" />
+                </ListItemPrefix>
+                Seasonal Anime
+              </ListItem>
+            </Link>
             <Accordion
               open={open === 3}
               icon={
@@ -162,18 +177,22 @@ export default function SideBarNavigation() {
               </ListItem>
               <AccordionBody className="py-1">
                 <List className="text-blue-gray-200 p-0">
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    Top Manga
-                  </ListItem>
-                  <ListItem>
-                    <ListItemPrefix>
-                      <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                    </ListItemPrefix>
-                    Manga Reader
-                  </ListItem>
+                  <Link to="top-manga">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      Top Manga
+                    </ListItem>
+                  </Link>
+                  <Link to="manga-reader">
+                    <ListItem>
+                      <ListItemPrefix>
+                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                      </ListItemPrefix>
+                      Manga Reader
+                    </ListItem>
+                  </Link>
                 </List>
               </AccordionBody>
             </Accordion>
