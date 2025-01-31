@@ -11,18 +11,26 @@ import TopMovies from "./Routes/TopLists/TopMovies"
 import SeasonalAnime from "./Routes/SeasonalAnime/SeasonalAnime"
 import TopManga from "./Routes/Manga/TopManga"
 import MangaReader from "./Routes/Manga/MangaReader"
+import { useState } from "react"
+import SideNavModal from "./Navigation/NavVomponents/SideNavModal/SideNavModal"
 
 function App() {
 
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  
+   
+    const openDrawer = () => setIsDrawerOpen(true);
+    const closeDrawer = () => setIsDrawerOpen(false);
 
   
   return (
     <div className="bg-gray-900 bg-opacity-90">
-      <TopNav />
+      <TopNav isDrawerOpen={isDrawerOpen} openDrawer={openDrawer} />
       <div className="bod flex">
         <div className="sidnav fixed top-17 hidden xl:block">
           <SideBarNavigation />
         </div>
+        <SideNavModal isDrawerOpen={isDrawerOpen} closeDrawer={closeDrawer} />
         <div className="content xl:ml-72">
           <Routes>
             <Route path="/" element={<Home />} />

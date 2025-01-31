@@ -1,8 +1,8 @@
 import { Link } from "react-router"
 import SearchField from "./NavVomponents/SearchField"
-import SideNavModal from "./SideNavModal"
+import SideNavModalButton from "./NavVomponents/SideNavModal/SideNavModalButton"
 
-export default function TopNav() {
+export default function TopNav({ isDrawerOpen, openDrawer }) {
 
   return (
     <div className="flex justify-between min-h-[4.5rem] items-center sticky top-0 bg-gray-900 py-3 px-5 text-gray-300 border-b border-gray-600">
@@ -13,7 +13,7 @@ export default function TopNav() {
         <SearchField />
       </div>
       <div>
-        <SideNavModal />
+        <SideNavModalButton isDrawerOpen={isDrawerOpen} openDrawer={openDrawer} />
       </div>
     </div>
   )
