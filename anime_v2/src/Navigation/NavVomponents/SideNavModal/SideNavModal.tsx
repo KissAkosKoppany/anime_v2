@@ -3,8 +3,9 @@ import {
 } from "@material-tailwind/react";
 import SideBarNavigation from "../../SideBarNavigation";
 import SearchField from "../SearchField";
+import { SideNavProps } from "../../../App";
  
-export default function SideNavModal({ isDrawerOpen, closeDrawer}) {
+export default function SideNavModal({ isDrawerOpen, closeDrawer}: SideNavProps) {
  
   return (
     <>

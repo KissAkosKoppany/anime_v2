@@ -14,8 +14,14 @@ import MangaReader from "./Routes/Manga/MangaReader"
 import { useState } from "react"
 import SideNavModal from "./Navigation/NavVomponents/SideNavModal/SideNavModal"
 
-function App() {
+export type SideNavProps = {
+  isDrawerOpen: boolean;
+  openDrawer?: () => void;
+  closeDrawer?: () => void;
+}
 
+function App() {
+  
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   
    

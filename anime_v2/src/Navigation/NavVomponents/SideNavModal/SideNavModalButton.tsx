@@ -5,8 +5,9 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { SideNavProps } from "../../../App";
 
-export default function SideNavModalButton({ isDrawerOpen, openDrawer}) {
+export default function SideNavModalButton({ isDrawerOpen, openDrawer}: SideNavProps) {
     
     return (
         <IconButton className="block xl:hidden" variant="text" size="lg" onClick={openDrawer}>

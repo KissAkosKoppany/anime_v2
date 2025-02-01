@@ -1,4 +1,5 @@
 import Banner from "./Components/Banner";
+import SliderBar from "./Components/SliderBar";
 
 
 export default function Home() {
@@ -6,8 +7,8 @@ export default function Home() {
     return (
         <div>
             <Banner />
-            <div className="p-16">
-                hello000000000000000000000000000000000000000000000000000000000000000000000000000000
+            <div className="p-12">
+                <SliderBar />
             </div>
         </div>
     )
