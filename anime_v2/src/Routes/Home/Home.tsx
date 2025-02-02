@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <div>
             <Banner />
-            <div className="p-12">
+            <div>
                 <SliderBar />
             </div>
         </div>
